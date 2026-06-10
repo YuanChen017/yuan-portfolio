@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/yuan-portfolio">
       <Routes>
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
