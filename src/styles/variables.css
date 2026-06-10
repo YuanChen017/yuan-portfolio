@@ -1,0 +1,41 @@
+:root {
+  /* Colors */
+  --color-paper: #F4EADC;
+  --color-paper-deep: #EDE0CC;
+  --color-paper-warm: #EAD9C4;
+  --color-ink: #111111;
+  --color-ink-soft: #2b2b2b;
+  --color-ink-light: #666666;
+  --color-ink-muted: #888888;
+  --color-black-panel: #151515;
+  --color-border-gold: rgba(190, 151, 89, 0.45);
+  --color-jade: #1f6f78;
+  --color-jade-dark: #11525b;
+  --color-seal: #A63228;
+  --color-red-seal: #A63228;
+  --color-gold: #c9a45c;
+  --color-white: #ffffff;
+  --color-card-bg: #fffdf9;
+
+  /* Layout */
+  --max-width: 1200px;
+  --navbar-height: 84px;
+  --section-padding: 80px 7vw;
+
+  /* Shadows */
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.10);
+  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.16);
+  --shadow-nav: 0 2px 20px rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  /* English body — Cormorant has ink-press contrast (thin/thick strokes) */
+  --font-body: "Cormorant Garamond", "Noto Serif SC", "Ma Shan Zheng", serif;
+  /* English display / headings — Cinzel: classical Roman, pairs with Chinese calligraphy */
+  --font-heading: "Cinzel", "Cormorant Garamond", "Noto Serif SC", serif;
+  /* Chinese calligraphy — Ma Shan Zheng: 楷书 brush style, ZCOOL XiaoWei as fallback */
+  --font-cn: "Ma Shan Zheng", "ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", "STSong", serif;
+
+  /* Transitions */
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.35s ease;
+}

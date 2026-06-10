@@ -1,0 +1,59 @@
+.hero-orbit-svg {
+  position: absolute;
+  inset: -36px;
+  width: calc(100% + 72px);
+  height: calc(100% + 72px);
+  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+/* Each ellipse rotates around its own geometric centre */
+.hero-orbit-svg ellipse {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Tilted clockwise — bright primary arc */
+.orbit-1 {
+  transform: rotate(-15deg);
+  animation: orbit-cw 5s linear infinite;
+}
+
+/* Tilted counter-clockwise — soft secondary arc */
+.orbit-2 {
+  transform: rotate(22deg);
+  animation: orbit-ccw 7.5s linear infinite;
+  animation-delay: -1.5s;
+}
+
+/* Steep tilt clockwise — vermillion accent */
+.orbit-3 {
+  transform: rotate(-42deg);
+  animation: orbit-cw 11s linear infinite;
+  animation-delay: -3s;
+}
+
+/* Nearly horizontal — slow ink depth ring */
+.orbit-4 {
+  transform: rotate(8deg);
+  animation: orbit-ccw 16s linear infinite;
+  animation-delay: -6s;
+}
+
+/* Fast micro-dot sparkle */
+.orbit-5 {
+  transform: rotate(55deg);
+  animation: orbit-cw 3.6s linear infinite;
+  animation-delay: -0.8s;
+}
+
+@keyframes orbit-cw {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: -1000; }
+}
+
+@keyframes orbit-ccw {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 1000; }
+}

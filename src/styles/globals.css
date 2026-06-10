@@ -1,0 +1,222 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-paper);
+  background-image: linear-gradient(180deg, #F7EFE4 0%, #EDE0CC 100%);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+main {
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Abstract ink wash (bg2.png) as a very faint fixed global texture */
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/bg2.png');
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Shared section styles */
+.section-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 10px;
+  color: var(--color-seal);
+  font-family: var(--font-cn);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  font-size: clamp(30px, 3.5vw, 52px);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+}
+
+/* Chinese text decorative — applied to CN label spans */
+.cn-label {
+  font-family: var(--font-cn);
+  font-weight: 400;
+}
+
+.section-subheading {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+  max-width: 680px;
+}
+
+/* Shared button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 26px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: 1.5px solid transparent;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: #fff;
+  border-color: var(--color-ink);
+}
+
+.btn-primary:hover {
+  background: #2b2b2b;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: rgba(17, 17, 17, 0.45);
+}
+
+.btn-outline:hover {
+  background: rgba(17, 17, 17, 0.06);
+}
+
+.btn-seal {
+  background: var(--color-seal);
+  color: #fff;
+  border-color: var(--color-seal);
+}
+
+.btn-seal:hover {
+  background: #8a2820;
+}
+
+/* Tag pill */
+.tech-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(17, 17, 17, 0.07);
+  color: var(--color-ink-soft);
+  letter-spacing: 0.03em;
+}
+
+/* ── Dark ink section — activated by adding .dark-ink-section to any section ── */
+.dark-ink-section {
+  background: linear-gradient(160deg, #131110 0%, #1c1815 100%);
+  color: #f0e6d6;
+}
+
+.dark-ink-section .eyebrow {
+  color: #45c8d2;
+}
+
+.dark-ink-section .section-heading {
+  color: #f0e6d6;
+}
+
+.dark-ink-section .section-subheading {
+  color: rgba(240, 230, 214, 0.68);
+}
+
+.dark-ink-section .ink-divider {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #c9504a 20%,
+    #c9504a 65%,
+    transparent 100%
+  );
+}
+
+.dark-ink-section .tech-pill {
+  background: rgba(255, 255, 255, 0.10);
+  color: rgba(240, 230, 214, 0.82);
+}
+
+.dark-ink-section .btn-outline {
+  color: #f0e6d6;
+  border-color: rgba(240, 230, 214, 0.30);
+}
+
+.dark-ink-section .btn-outline:hover {
+  background: rgba(240, 230, 214, 0.07);
+}
+
+/* Section divider — tapered brush stroke, not a hard rectangle */
+.ink-divider {
+  width: 72px;
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-seal) 20%,
+    var(--color-seal) 65%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  margin: 16px 0 36px;
+}

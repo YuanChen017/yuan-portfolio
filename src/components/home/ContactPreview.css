@@ -1,0 +1,111 @@
+.contact-preview-section {
+  padding: 80px 7vw;
+  background: var(--color-paper);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* sword.png fades in from the right — bamboo, blade, ink splashes */
+.contact-preview-section::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 56%;
+  background-image: url('/sword.png');
+  background-size: cover;
+  background-position: right center;
+  opacity: 0.22;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    black 72%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    black 72%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-preview-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-preview-heading {
+  max-width: 600px;
+}
+
+.contact-preview-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.contact-preview-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 20px;
+  background: var(--color-card-bg);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: all var(--transition-base);
+}
+
+.contact-preview-item:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.contact-preview-icon {
+  font-size: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(166, 50, 40, 0.09);
+  color: var(--color-seal);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.contact-preview-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-light);
+  margin-bottom: 2px;
+}
+
+.contact-preview-value {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+@media (max-width: 900px) {
+  .contact-preview-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-preview-links {
+    grid-template-columns: 1fr;
+  }
+}

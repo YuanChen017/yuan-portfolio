@@ -1,0 +1,311 @@
+/* ============================================================
+   INK THEME — Chinese ink-painting aesthetic
+   ============================================================ */
+
+/* ================================================================
+   INK ART PANELS — each section gets a unique painting
+   ================================================================ */
+
+/* HOME HERO right panel — action warrior with glowing sword */
+.hero-ink-art {
+  width: 100%;
+  height: 520px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/hero-warrior.png');
+  background-size: cover;
+  background-position: center 15%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Left-edge cream fade so the warrior bleeds naturally into the content */
+.hero-ink-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(247, 239, 228, 0.72) 0%,
+    rgba(247, 239, 228, 0.18) 28%,
+    transparent 52%
+  );
+  pointer-events: none;
+}
+
+/* Bottom-edge vignette */
+.hero-ink-art::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(237, 224, 204, 0.55), transparent);
+  pointer-events: none;
+}
+
+/* ABOUT right panel — serene warrior on cliff, contemplative */
+.about-ink-art {
+  width: 100%;
+  height: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-image: url('/hero-warrior2.png');
+  background-size: cover;
+  background-position: center 10%;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22), 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Left-edge fade matching about page background */
+.about-ink-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(237, 224, 204, 0.65) 0%,
+    rgba(237, 224, 204, 0.12) 30%,
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+/* Bottom vignette */
+.about-ink-art::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(to top, rgba(237, 224, 204, 0.55), transparent);
+  pointer-events: none;
+}
+
+/* CONTACT form background — sword planted in stone with bamboo */
+.contact-ink-sword {
+  position: absolute;
+  inset: 0;
+  background-image: url('/sword.png');
+  background-size: cover;
+  background-position: center center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+.contact-ink-sword::after {
+  content: "剑指苍穹";
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  font-size: 22px;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  color: rgba(17, 17, 17, 0.15);
+  letter-spacing: 0.15em;
+  writing-mode: vertical-rl;
+}
+
+/* ---- Full-width ink strip divider — mountain landscape with red sun ---- */
+.ink-section-strip {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background-image: url('/mountain.png');
+  background-size: cover;
+  background-position: center 40%;
+  pointer-events: none;
+}
+
+.ink-section-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Reveal more of the mountain painting in the center band */
+  background: linear-gradient(
+    180deg,
+    rgba(244, 234, 220, 0.96) 0%,
+    rgba(244, 234, 220, 0.18) 35%,
+    rgba(244, 234, 220, 0.18) 65%,
+    rgba(237, 224, 204, 0.96) 100%
+  );
+}
+
+/* Bridge from light section above → dark ink section below */
+.ink-section-strip.to-dark::before {
+  background: linear-gradient(
+    180deg,
+    rgba(244, 234, 220, 0.96) 0%,
+    rgba(244, 234, 220, 0.12) 38%,
+    rgba(19, 17, 16, 0.12) 62%,
+    rgba(19, 17, 16, 0.95) 100%
+  );
+}
+
+/* Diagonal brush-stroke clip so the strip has organic edges, not a flat rectangle */
+.ink-section-strip {
+  clip-path: polygon(0 18px, 100% 0, 100% calc(100% - 18px), 0 100%);
+  margin: -18px 0;
+  z-index: 2;
+  position: relative;
+}
+
+/* ---- Project card image placeholders ---- */
+.project-img {
+  width: 100%;
+  height: 180px;
+  border-radius: 4px 4px 0 0;
+}
+
+.project-img-1 {
+  background: linear-gradient(135deg, #1a2a3a 0%, #2d4a6e 50%, #3d6a8e 100%);
+}
+
+.project-img-2 {
+  background: linear-gradient(135deg, #1a2818 0%, #2a4028 50%, #3a5838 100%);
+}
+
+.project-img-3 {
+  background: linear-gradient(135deg, #2a1a28 0%, #3a2a45 50%, #4e3860 100%);
+}
+
+.project-img-4 {
+  background: linear-gradient(135deg, #2a1a12 0%, #45302a 50%, #6a4838 100%);
+}
+
+.project-img-5 {
+  background: linear-gradient(135deg, #1a2228 0%, #2a3840 50%, #3a5460 100%);
+}
+
+.project-img-6 {
+  background: linear-gradient(135deg, #221822 0%, #3a2838 50%, #542848 100%);
+}
+
+/* ---- Ink wash decorative elements ---- */
+.ink-wash-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(140, 100, 70, 0.12), transparent 55%),
+    radial-gradient(ellipse at 30% 70%, rgba(100, 70, 50, 0.08), transparent 45%);
+  z-index: 0;
+}
+
+/* ---- Section backgrounds ---- */
+.section-dark {
+  background: var(--color-black-panel);
+  color: #f3eadc;
+}
+
+.section-paper {
+  background: var(--color-paper);
+}
+
+.section-paper-deep {
+  background: var(--color-paper-deep);
+}
+
+/* ---- Card styles — more organic, less rectangular ---- */
+.ink-card {
+  background: var(--color-card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), 0 1px 6px rgba(0, 0, 0, 0.04);
+  transition: box-shadow var(--transition-slow), transform var(--transition-slow);
+}
+
+.ink-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+/* ---- Seal / stamp decorative mark ---- */
+.seal-mark {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  background: var(--color-seal);
+  color: #fff;
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  letter-spacing: 0.05em;
+  transform: rotate(-3deg);
+}
+
+/* ---- Decorative Chinese characters ---- */
+.cn-deco {
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-weight: 800;
+}
+
+/* ---- Progress bar ---- */
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(17, 17, 17, 0.10);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-ink) 0%, var(--color-ink-soft) 100%);
+  border-radius: 3px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---- Timeline ---- */
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-seal) 0%, rgba(166, 50, 40, 0.15) 100%);
+}
+
+.timeline-dot {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-seal);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: "Noto Serif SC", serif;
+  box-shadow: 0 0 0 4px rgba(166, 50, 40, 0.15);
+}
+
+/* ---- Skill icon containers ---- */
+.skill-icon-react { background: rgba(97, 218, 251, 0.15); color: #21a1c4; }
+.skill-icon-ts { background: rgba(49, 120, 198, 0.15); color: #3178c6; }
+.skill-icon-node { background: rgba(104, 160, 99, 0.15); color: #4a8c3f; }
+.skill-icon-graphql { background: rgba(225, 0, 152, 0.12); color: #e10098; }
+.skill-icon-next { background: rgba(17, 17, 17, 0.08); color: #111; }
+.skill-icon-ai { background: rgba(166, 50, 40, 0.12); color: var(--color-seal); }
+.skill-icon-fullstack { background: rgba(31, 111, 120, 0.12); color: var(--color-jade); }
+
+.skill-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}

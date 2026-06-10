@@ -1,0 +1,56 @@
+.about-ripple-svg {
+  position: absolute;
+  inset: -36px;
+  width: calc(100% + 72px);
+  height: calc(100% + 72px);
+  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+/* ── Ripple rings — expand outward and fade like ink in water ── */
+.about-ripple-svg .ripple {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes ink-ripple {
+  0%   { transform: scale(0.60); opacity: 0.85; }
+  60%  { opacity: 0.4; }
+  100% { transform: scale(1.40); opacity: 0; }
+}
+
+.rp-1 { animation: ink-ripple 4.2s ease-out infinite; }
+.rp-2 { animation: ink-ripple 4.2s ease-out infinite; animation-delay: -0.84s; }
+.rp-3 { animation: ink-ripple 4.2s ease-out infinite; animation-delay: -1.68s; }
+.rp-4 { animation: ink-ripple 4.2s ease-out infinite; animation-delay: -2.52s; }
+.rp-5 { animation: ink-ripple 4.2s ease-out infinite; animation-delay: -3.36s; }
+
+/* ── Corner brackets — sequential breathing glow ── */
+.bracket {
+  fill: none;
+  /* Draw-in on load, then breathe */
+  stroke-dasharray: 120;
+  stroke-dashoffset: 0;
+  animation: bracket-breathe 4s ease-in-out infinite;
+}
+
+@keyframes bracket-breathe {
+  0%, 100% { opacity: 0.45; stroke-width: 2.2; }
+  50%       { opacity: 0.90; stroke-width: 2.8; }
+}
+
+.br-tl { animation-delay: 0s; }
+.br-tr { animation-delay: 1s; }
+.br-bl { animation-delay: 2s; }
+.br-br { animation-delay: 3s; }
+
+/* ── Centre cross — slow pulse ── */
+.centre-cross {
+  animation: cross-pulse 3s ease-in-out infinite;
+}
+
+@keyframes cross-pulse {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.45; }
+}

@@ -1,0 +1,108 @@
+.proj-preview-section {
+  padding: 80px 7vw;
+}
+
+/* Dark ink card overrides */
+.proj-preview-section.dark-ink-section .proj-preview-card {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.proj-preview-section.dark-ink-section .proj-preview-card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.50);
+}
+
+.proj-preview-section.dark-ink-section .proj-preview-title {
+  color: #f0e6d6;
+}
+
+.proj-preview-section.dark-ink-section .proj-preview-cn {
+  color: #45c8d2;
+}
+
+.proj-preview-section.dark-ink-section .proj-preview-desc {
+  color: rgba(240, 230, 214, 0.60);
+}
+
+.proj-preview-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.proj-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.proj-preview-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--color-card-bg);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-base);
+}
+
+.proj-preview-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+.proj-preview-card-body {
+  padding: 20px 22px 22px;
+}
+
+.proj-preview-cn {
+  font-size: 11px;
+  color: var(--color-seal);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.proj-preview-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.proj-preview-desc {
+  font-size: 13px;
+  color: var(--color-ink-light);
+  line-height: 1.65;
+  margin-bottom: 14px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.proj-preview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.proj-preview-cta {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .proj-preview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .proj-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}

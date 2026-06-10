@@ -1,0 +1,121 @@
+.exp-preview-section {
+  padding: 96px 7vw 80px;
+  background: linear-gradient(
+    180deg,
+    var(--color-paper) 0%,
+    var(--color-paper-deep) 100%
+  );
+  position: relative;
+  z-index: 1;
+}
+
+.exp-preview-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.exp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.exp-timeline-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.exp-timeline-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4px;
+}
+
+.exp-timeline-line {
+  width: 2px;
+  flex: 1;
+  min-height: 60px;
+  background: linear-gradient(180deg, rgba(166, 50, 40, 0.4) 0%, rgba(166, 50, 40, 0.08) 100%);
+  margin-top: 8px;
+}
+
+.exp-card {
+  background: rgba(255, 253, 249, 0.88);
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transition: all var(--transition-slow);
+  backdrop-filter: blur(4px);
+}
+
+.exp-card:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.11);
+  transform: translateY(-3px);
+}
+
+.exp-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.exp-company {
+  font-size: 18px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.exp-title {
+  font-size: 14px;
+  color: var(--color-seal);
+  font-weight: 600;
+}
+
+.exp-period {
+  font-size: 12px;
+  color: var(--color-ink-light);
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.exp-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-highlights li {
+  font-size: 14px;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.exp-highlights li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-seal);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .exp-card-header {
+    flex-direction: column;
+  }
+}
