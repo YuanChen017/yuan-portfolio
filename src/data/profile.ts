@@ -8,7 +8,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/yuanchen",
   twitter: "https://twitter.com/yuanchen_dev",
   resumeUrl: "/resume.pdf",
-  location: "深圳, 中国",
+  location: "San Jose, CA",
   bioCn:
     "我是一名全栈工程师，热爱前端美学，专注于高性能、优雅的数字体验，渴望探索技术与创造力的边界，构建高质量、令人难忘的数字产品。",
   bioEn:

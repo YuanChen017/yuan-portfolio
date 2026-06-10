@@ -8,11 +8,11 @@
 // ── Navigation ────────────────────────────────────────────────
 export const NAV = {
   links: [
-    { label: "About",      cn: "关于我", path: "/about" },
-    { label: "Skills",     cn: "技能",   path: "/#skills" },
-    { label: "Experience", cn: "经历",   path: "/experience" },
-    { label: "Projects",   cn: "项目",   path: "/projects" },
-    { label: "Contact",    cn: "联系我", path: "/contact" },
+    { label: "About", cn: "关于我", path: "/about" },
+    { label: "Skills", cn: "技能", path: "/#skills" },
+    { label: "Experience", cn: "经历", path: "/experience" },
+    { label: "Projects", cn: "项目", path: "/projects" },
+    { label: "Contact", cn: "联系我", path: "/contact" },
   ],
 };
 
@@ -54,10 +54,10 @@ export const CONTACT_PREVIEW = {
   eyebrow: "联系我 Contact",
   heading: "Let's Build Something Together",
   cta: "Get in Touch →",
-  email:   { label: "Email" },
-  github:  { label: "GitHub",   value: "github.com/yuanchen" },
-  linkedin:{ label: "LinkedIn", value: "linkedin.com/in/yuanchen" },
-  resume:  { label: "Resume",   value: "Download PDF" },
+  email: { label: "Email" },
+  github: { label: "GitHub", value: "github.com/yuanchen" },
+  linkedin: { label: "LinkedIn", value: "linkedin.com/in/yuanchen" },
+  resume: { label: "Resume", value: "Download PDF" },
 };
 
 // ── About Page ────────────────────────────────────────────────
@@ -126,12 +126,7 @@ export const EXPERIENCE = {
   certsSubtitle: "Certificates & Honors",
   certDot: "★",
 
-  certificates: [
-    "AWS Certified Developer – Associate",
-    "Google Cloud Professional Developer",
-    "Top Performance Award – PayPal",
-    "Walmart Global Tech – Excellence Award",
-  ],
+  certificates: ["ML Certified Developer", "React Certified Developer"],
 };
 
 // ── Projects Page ─────────────────────────────────────────────
@@ -139,7 +134,8 @@ export const PROJECTS = {
   eyebrow: "精选项目 Featured Projects",
   heading: "精选项目",
   subtitleCn: "遴选最佳产品集，我的经历、我的创意，期待您的任何任务。",
-  subtitleEn: "A curated collection of my best work — my experience, my creativity. Ready for any challenge.",
+  subtitleEn:
+    "A curated collection of my best work — my experience, my creativity. Ready for any challenge.",
   prevPage: "‹",
   nextPage: "›",
 };
@@ -177,17 +173,21 @@ export const CONTACT = {
   bodyEn: "Let's build something meaningful together.",
 
   details: {
-    email:    { label: "Email",    icon: "✉" },
+    email: { label: "Email", icon: "✉" },
     location: { label: "Location", icon: "📍" },
-    status:   { label: "Status",   icon: "🤝", value: "开放合作 Open to Opportunities" },
+    status: {
+      label: "Status",
+      icon: "🤝",
+      value: "开放合作 Open to Opportunities",
+    },
   },
 
   form: {
     titleCn: "发送消息",
     titleEn: "Send a Message",
     fields: {
-      name:    { label: "姓名 / Name",    placeholder: "Your name" },
-      email:   { label: "邮件 / Email",   placeholder: "your@email.com" },
+      name: { label: "姓名 / Name", placeholder: "Your name" },
+      email: { label: "邮件 / Email", placeholder: "your@email.com" },
       subject: { label: "主题 / Subject", placeholder: "What's this about?" },
       message: { label: "留言 / Message", placeholder: "Your message..." },
     },
