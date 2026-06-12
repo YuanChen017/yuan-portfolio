@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChatWidget } from "@yuanchen710/portfolio-assistant-sdk";
+import resumeText from "./data/resumeText";
 
 import PageLayout from "./components/layout/PageLayout";
 import Home from "./pages/Home";
@@ -53,7 +54,7 @@ export default function App() {
         config={{
           ownerName: "Yuan Chen",
           assistantName: "Yuan AI",
-          resumePdfUrl: `${import.meta.env.BASE_URL}resume.pdf`,
+          resumeText,
           apiKey: import.meta.env.VITE_GROQ_API_KEY,
           model: "llama-3.3-70b-versatile",
           position: "bottom-right",
