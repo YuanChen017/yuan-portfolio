@@ -53,7 +53,7 @@ export default function App() {
         config={{
           ownerName: "Yuan Chen",
           assistantName: "Yuan AI",
-          resumePdfUrl: "/resume.pdf",
+          resumePdfUrl: `${import.meta.env.BASE_URL}resume.pdf`,
           apiKey: import.meta.env.VITE_GROQ_API_KEY,
           model: "llama-3.3-70b-versatile",
           position: "bottom-right",
