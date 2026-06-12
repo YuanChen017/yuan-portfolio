@@ -174,6 +174,37 @@ export const projects: Project[] = [
   },
   {
     id: 6,
+    title: "Portfolio Assistant SDK",
+    cnTitle: "AI 作品集助手 SDK",
+    description:
+      "A plug-and-play AI chatbot SDK for portfolio sites. Visitors can chat with an AI that reads your resume, answers questions about your background, and runs job-match analysis — all in a floating widget.",
+    cnDescription: "开箱即用的 AI 聊天 SDK，访客可通过悬浮组件与能读懂简历的 AI 对话，获取岗位匹配分析与背景问答。",
+    techStack: ["React", "TypeScript", "Vite", "Groq API"],
+    image: "/images/project-portfolio-sdk.png",
+    highlights: [
+      "Published as a reusable npm package (@yuanchen710/portfolio-assistant-sdk)",
+      "Supports Groq, OpenAI, Gemini, and Claude as LLM backends",
+      "PDF resume ingestion with in-browser text extraction",
+      "Streaming responses and job-match analysis out of the box",
+    ],
+    techStackDetail: {
+      frontend: ["React", "TypeScript", "Vite", "CSS Modules"],
+      backend: ["Groq API", "OpenAI API", "Anthropic Claude"],
+      ai: ["LLaMA 3.3 70B", "Streaming Completions", "RAG over Resume"],
+      devops: ["npm Registry", "GitHub Actions"],
+    },
+    myRole: [
+      "Designed and built the SDK as a standalone npm package",
+      "Implemented multi-provider LLM routing",
+      "Built PDF parsing and resume context injection",
+      "Published and maintained on npm",
+    ],
+    type: "Open Source",
+    liveUrl: "https://www.npmjs.com/package/@yuanchen710/portfolio-assistant-sdk",
+    githubUrl: "https://github.com/YuanChen/portfolio-assistant-sdk",
+  },
+  {
+    id: 7,
     title: "TaskForge",
     cnTitle: "协作任务管理工具",
     description:

@@ -108,4 +108,7 @@
   .contact-preview-links {
     grid-template-columns: 1fr;
   }
+  .contact-preview-section::after {
+    display: none;
+  }
 }

@@ -105,7 +105,7 @@
 .hero-ink-art-wrapper {
   position: relative;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
@@ -117,15 +117,21 @@
     order: -1;
   }
   .hero-ink-art {
-    height: 280px !important;
+    height: 240px !important;
   }
   .hero-title {
-    font-size: clamp(56px, 14vw, 100px);
+    font-size: clamp(40px, 11vw, 100px);
   }
 }
 
 @media (max-width: 480px) {
   .hero-section {
     padding: calc(var(--navbar-height) + 40px) 6vw 60px;
+  }
+  .hero-title {
+    font-size: clamp(32px, 10vw, 64px);
+  }
+  .hero-ink-art {
+    height: 200px !important;
   }
 }

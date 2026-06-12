@@ -1,4 +1,5 @@
 /* Navbar */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -13,28 +14,28 @@
   background: rgba(244, 234, 220, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  /* flat border replaced by gradient ::after line */
   border-bottom: none;
   box-shadow: var(--shadow-nav);
-  overflow: hidden;
+  /* No overflow:hidden — it clips the mobile dropdown */
 }
 
-/* Sword icon ghost — centered on right side, clipped to navbar height */
+/* Sword icon ghost — contained within navbar height so no clipping needed */
+
 .navbar::before {
   content: "";
   position: absolute;
   right: 3.5vw;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   width: 170px;
-  height: 170px;
-  background: url('/iconsword.png') no-repeat center / contain;
+  height: 100%;
+  background: url("/iconsword.png") no-repeat center / contain;
   opacity: 0.16;
   pointer-events: none;
   z-index: 0;
 }
 
 /* Vermillion gradient border line — tapered brush stroke feel */
+
 .navbar::after {
   content: "";
   position: absolute;
@@ -46,7 +47,7 @@
     to right,
     transparent 0%,
     rgba(166, 50, 40, 0.18) 12%,
-    rgba(166, 50, 40, 0.60) 50%,
+    rgba(166, 50, 40, 0.6) 50%,
     rgba(166, 50, 40, 0.18) 88%,
     transparent 100%
   );
@@ -76,7 +77,9 @@
   font-size: 28px;
   font-weight: 400;
   font-family: var(--font-cn);
-  box-shadow: 0 0 16px rgba(166, 50, 40, 0.20), 0 2px 8px rgba(0, 0, 0, 0.28);
+  box-shadow:
+    0 0 16px rgba(166, 50, 40, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.28);
 }
 
 .navbar-logo-text strong {
@@ -155,13 +158,16 @@
   display: none;
   background: none;
   border: none;
-  padding: 8px;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
   color: var(--color-ink);
   position: relative;
   z-index: 1;
 }
 
 /* Footer */
+
 .footer {
   background: var(--color-black-panel);
   color: #f3eadc;
@@ -205,6 +211,7 @@
 }
 
 /* Page wrapper — z-index: 4 keeps content above the canvas (z-index: 3) */
+
 .page-wrapper {
   flex: 1;
   padding-top: var(--navbar-height);
@@ -215,12 +222,16 @@
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
-    position: absolute;
+    position: fixed;
     top: var(--navbar-height);
     left: 0;
     right: 0;
+    z-index: 99;
+    max-height: calc(100dvh - var(--navbar-height));
+    overflow-y: auto;
     background: rgba(244, 234, 220, 0.97);
     backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     padding: 24px 7vw 32px;
     flex-direction: column;
     gap: 28px;
@@ -228,20 +239,16 @@
     /* Bottom edge gradient, matching desktop */
     box-shadow: 0 4px 0 0 rgba(166, 50, 40, 0.18);
     /* Sword ghost bottom-right corner of dropdown */
-    background-image: url('/iconsword.png');
-    background-repeat: no-repeat;
-    background-size: 120px 120px;
-    background-position: right 6vw bottom -10px;
+    background:
+      linear-gradient(rgba(244, 234, 220, 0.88), rgba(244, 234, 220, 0.88)),
+      url("/iconsword.png") center / cover no-repeat;
   }
-
   .navbar-links.open {
     display: flex;
   }
-
   .navbar-menu-btn {
     display: flex;
   }
-
   .footer {
     flex-direction: column;
     text-align: center;
